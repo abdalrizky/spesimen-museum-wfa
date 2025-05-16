@@ -1,4 +1,6 @@
-﻿Public Class SpecimentManagementForm
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
+Public Class SpecimentManagementForm
     Private Sub SpecimentManagementForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
     End Sub
@@ -54,4 +56,64 @@
         End If
     End Sub
 
+    Private printFont As New Font("Arial", 10)
+    Private currentY As Integer = 0
+
+    Private Sub PrintDocument1_BeginPrint(sender As Object, e As Printing.PrintEventArgs) Handles PrintDocument1.BeginPrint
+        currentY = 0
+    End Sub
+
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        Dim g As Graphics = e.Graphics
+        Dim leftMargin As Integer = e.MarginBounds.Left
+        Dim pageWidth As Integer = e.MarginBounds.Width
+        Dim cellHeight As Integer = 25
+        Dim colWidths(lvwSpeciments.Columns.Count - 1) As Integer
+
+        ' Atur lebar kolom: kolom pertama kecil, sisanya standar
+        colWidths(0) = 50
+        For i = 1 To colWidths.Length - 1
+            colWidths(i) = 100
+        Next
+
+        currentY = e.MarginBounds.Top
+
+        ' === JUDUL TENGAH ===
+        Dim titleFont As New Font("Arial", 16, FontStyle.Bold)
+        Dim titleText As String = "Data Spesimen"
+        Dim titleSize As SizeF = g.MeasureString(titleText, titleFont)
+        Dim titleX As Integer = leftMargin + (pageWidth - titleSize.Width) / 2
+        g.DrawString(titleText, titleFont, Brushes.Black, titleX, currentY)
+        currentY += CInt(titleSize.Height + 20)
+
+        ' === HEADER TABEL ===
+        Dim x As Integer = leftMargin
+        For i = 0 To lvwSpeciments.Columns.Count - 1
+            ' Gambar kotak header
+            g.DrawRectangle(Pens.Black, x, currentY, colWidths(i), cellHeight)
+            ' Gambar teks header
+            g.DrawString(lvwSpeciments.Columns(i).Text, printFont, Brushes.Black, x + 5, currentY + 5)
+            x += colWidths(i)
+        Next
+        currentY += cellHeight
+
+        ' === ISI DATA ===
+        For Each item As ListViewItem In lvwSpeciments.Items
+            x = leftMargin
+            For i = 0 To lvwSpeciments.Columns.Count - 1
+                Dim cellText As String = If(i = 0, item.Text, item.SubItems(i).Text)
+                g.DrawRectangle(Pens.Black, x, currentY, colWidths(i), cellHeight)
+                g.DrawString(cellText, printFont, Brushes.Black, x + 5, currentY + 5)
+                x += colWidths(i)
+            Next
+            currentY += cellHeight
+        Next
+
+        e.HasMorePages = False
+    End Sub
+
+    Private Sub btnPrintSpecimentList_Click(sender As Object, e As EventArgs) Handles btnPrintSpecimentList.Click
+        PrintPreviewDialog1.Document = PrintDocument1
+        PrintPreviewDialog1.ShowDialog()
+    End Sub
 End Class

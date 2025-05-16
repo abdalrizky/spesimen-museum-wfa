@@ -22,9 +22,13 @@ Partial Class SpecimentManagementForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SpecimentManagementForm))
         btnAdd = New Button()
         txtSearching = New TextBox()
         lvwSpeciments = New ListView()
+        btnPrintSpecimentList = New Button()
+        PrintDocument1 = New Printing.PrintDocument()
+        PrintPreviewDialog1 = New PrintPreviewDialog()
         SuspendLayout()
         ' 
         ' btnAdd
@@ -63,12 +67,39 @@ Partial Class SpecimentManagementForm
         lvwSpeciments.UseCompatibleStateImageBehavior = False
         lvwSpeciments.View = View.Details
         ' 
+        ' btnPrintSpecimentList
+        ' 
+        btnPrintSpecimentList.BackColor = Color.Azure
+        btnPrintSpecimentList.FlatAppearance.BorderColor = Color.LightSkyBlue
+        btnPrintSpecimentList.FlatAppearance.BorderSize = 2
+        btnPrintSpecimentList.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue
+        btnPrintSpecimentList.FlatStyle = FlatStyle.Flat
+        btnPrintSpecimentList.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnPrintSpecimentList.Location = New Point(475, 682)
+        btnPrintSpecimentList.Margin = New Padding(5, 6, 5, 6)
+        btnPrintSpecimentList.Name = "btnPrintSpecimentList"
+        btnPrintSpecimentList.Size = New Size(408, 96)
+        btnPrintSpecimentList.TabIndex = 16
+        btnPrintSpecimentList.Text = "Cetak Daftar Spesimen"
+        btnPrintSpecimentList.UseVisualStyleBackColor = False
+        ' 
+        ' PrintPreviewDialog1
+        ' 
+        PrintPreviewDialog1.AutoScrollMargin = New Size(0, 0)
+        PrintPreviewDialog1.AutoScrollMinSize = New Size(0, 0)
+        PrintPreviewDialog1.ClientSize = New Size(400, 300)
+        PrintPreviewDialog1.Enabled = True
+        PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), Icon)
+        PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        PrintPreviewDialog1.Visible = False
+        ' 
         ' SpecimentManagementForm
         ' 
         AutoScaleDimensions = New SizeF(13F, 32F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.LightCyan
         ClientSize = New Size(1359, 824)
+        Controls.Add(btnPrintSpecimentList)
         Controls.Add(lvwSpeciments)
         Controls.Add(btnAdd)
         Controls.Add(txtSearching)
@@ -83,4 +114,7 @@ Partial Class SpecimentManagementForm
     Friend WithEvents btnAdd As Button
     Friend WithEvents txtSearching As TextBox
     Friend WithEvents lvwSpeciments As ListView
+    Friend WithEvents btnPrintSpecimentList As Button
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
 End Class
