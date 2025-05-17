@@ -1,6 +1,4 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
-
-Public Class AccountManagementForm
+﻿Public Class AccountManagementForm
     Private originalItems As New List(Of ListViewItem)
 
     Private Sub AccountManagementForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -83,6 +83,9 @@ Partial Class SpecimentManagementForm
         btnPrintSpecimentList.Text = "Cetak Daftar Spesimen"
         btnPrintSpecimentList.UseVisualStyleBackColor = False
         ' 
+        ' PrintDocument1
+        ' 
+        ' 
         ' PrintPreviewDialog1
         ' 
         PrintPreviewDialog1.AutoScrollMargin = New Size(0, 0)

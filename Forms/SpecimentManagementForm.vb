@@ -1,6 +1,9 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class SpecimentManagementForm
+
+    Private originalItems As New List(Of ListViewItem)
+
     Private Sub SpecimentManagementForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
     End Sub
@@ -8,6 +11,7 @@ Public Class SpecimentManagementForm
     Private Sub LoadData()
         lvwSpeciments.Items.Clear()
         lvwSpeciments.Columns.Clear()
+        originalItems.Clear()
         lvwSpeciments.Columns.Add("No.")
         lvwSpeciments.Columns.Add("ID")
         lvwSpeciments.Columns.Add("Nama Umum", 200)
@@ -28,6 +32,7 @@ Public Class SpecimentManagementForm
             item.SubItems.Add(speciment.CollectionStorageName)
             item.SubItems.Add(speciment.Description)
             lvwSpeciments.Items.Add(item)
+            originalItems.Add(CType(item.Clone(), ListViewItem))
             ordinal += 1
         Next
     End Sub
@@ -121,5 +126,15 @@ Public Class SpecimentManagementForm
     Private Sub btnPrintSpecimentList_Click(sender As Object, e As EventArgs) Handles btnPrintSpecimentList.Click
         PrintPreviewDialog1.Document = PrintDocument1
         PrintPreviewDialog1.ShowDialog()
+    End Sub
+
+    Private Sub txtSearching_TextChanged(sender As Object, e As EventArgs) Handles txtSearching.TextChanged
+        Dim keyword As String = txtSearching.Text.ToLower()
+        lvwSpeciments.Items.Clear()
+        For Each item As ListViewItem In originalItems
+            If item.SubItems(2).Text.ToLower().Contains(keyword) Then
+                lvwSpeciments.Items.Add(CType(item.Clone(), ListViewItem))
+            End If
+        Next
     End Sub
 End Class
