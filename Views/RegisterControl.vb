@@ -21,6 +21,11 @@
             Return
         End If
 
+        If password.Length < 8 Then
+            MessageBox.Show("Password harus 8 karakter atau lebih", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
         If passwordConfirm <> password Then
             MessageBox.Show("Konfirmasi password tidak sama.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -48,4 +53,5 @@
             btnRegis.Enabled = True
         End If
     End Sub
+
 End Class
