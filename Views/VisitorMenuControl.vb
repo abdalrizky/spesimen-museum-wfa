@@ -6,10 +6,10 @@
         specimentListForm.Show()
     End Sub
 
-    Private Sub btnToFavoriteList_Click(sender As Object, e As EventArgs) Handles btnToFavoriteList.Click
-        Dim specimentFavoriteForm As New SpecimentFavoriteForm()
-        specimentFavoriteForm.User = Me.User
-        specimentFavoriteForm.Show()
+    Private Sub btnToFavoriteList_Click(sender As Object, e As EventArgs)
+        'Dim specimentFavoriteForm As New SpecimentFavoriteForm()
+        'specimentFavoriteForm.User = Me.User
+        'specimentFavoriteForm.Show()
     End Sub
 
     Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click

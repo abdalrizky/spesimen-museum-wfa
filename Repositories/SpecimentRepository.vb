@@ -30,43 +30,6 @@ Public Class SpecimentRepository
         Return result
     End Function
 
-    Public Shared Function GetFavorite(credentialId As Integer) As List(Of Speciment)
-        Dim query As String = "
-        SELECT speciments.*, collection_storages.name as collection_storage_name
-        FROM favorite_speciments
-        JOIN speciments ON favorite_speciments.speciment_id = speciments.id
-        JOIN collection_storages ON speciments.collection_storage_id = collection_storages.id
-        WHERE favorite_speciments.credential_id = @credential_id
-    "
-
-        Dim result As New List(Of Speciment)()
-        Try
-            OpenConnection()
-            Dim command As New MySqlCommand(query, conn)
-            command.Parameters.AddWithValue("@credential_id", credentialId)
-            Dim reader As MySqlDataReader = command.ExecuteReader()
-
-            While reader.Read()
-                Dim speciment As New Speciment()
-                speciment.Id = reader("id").ToString()
-                speciment.CommonName = reader("common_name").ToString()
-                speciment.ScientificName = reader("scientific_name").ToString()
-                speciment.Family = reader("family").ToString()
-                speciment.PreservationMethod = reader("preservation_method").ToString()
-                speciment.Description = reader("description").ToString()
-                speciment.PhotoPath = reader("photo_path").ToString()
-                speciment.CollectionStorageName = reader("collection_storage_name").ToString()
-                result.Add(speciment)
-            End While
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            CloseConnection()
-        End Try
-
-        Return result
-    End Function
-
     Public Shared Function Insert(speciment As Speciment)
         Dim query As String =
             "INSERT INTO speciments (collection_storage_id, common_name, scientific_name, family, preservation_method, description, photo_path, created_at)

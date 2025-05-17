@@ -37,10 +37,6 @@ Partial Class AddEditSpecimentForm
         txtDeskripsi = New TextBox()
         btnSimpan = New Button()
         btnBatal = New Button()
-        Label4 = New Label()
-        btnUploadImage = New Button()
-        Panel4 = New Panel()
-        PictureBox1 = New PictureBox()
         Panel5 = New Panel()
         cbRuangPenyimpanan = New ComboBox()
         Label8 = New Label()
@@ -49,8 +45,6 @@ Partial Class AddEditSpecimentForm
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         Panel3.SuspendLayout()
-        Panel4.SuspendLayout()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel5.SuspendLayout()
         SuspendLayout()
         ' 
@@ -209,7 +203,7 @@ Partial Class AddEditSpecimentForm
         btnSimpan.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue
         btnSimpan.FlatStyle = FlatStyle.Flat
         btnSimpan.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnSimpan.Location = New Point(1119, 1062)
+        btnSimpan.Location = New Point(1119, 276)
         btnSimpan.Margin = New Padding(5, 6, 5, 6)
         btnSimpan.Name = "btnSimpan"
         btnSimpan.Size = New Size(182, 78)
@@ -225,59 +219,13 @@ Partial Class AddEditSpecimentForm
         btnBatal.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue
         btnBatal.FlatStyle = FlatStyle.Flat
         btnBatal.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnBatal.Location = New Point(1311, 1062)
+        btnBatal.Location = New Point(1311, 276)
         btnBatal.Margin = New Padding(5, 6, 5, 6)
         btnBatal.Name = "btnBatal"
         btnBatal.Size = New Size(182, 78)
         btnBatal.TabIndex = 16
         btnBatal.Text = "Batal"
         btnBatal.UseVisualStyleBackColor = False
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.FlatStyle = FlatStyle.Flat
-        Label4.Font = New Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label4.Location = New Point(805, 297)
-        Label4.Margin = New Padding(5, 0, 5, 0)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(111, 31)
-        Label4.TabIndex = 17
-        Label4.Text = "Gambar"
-        ' 
-        ' btnUploadImage
-        ' 
-        btnUploadImage.BackColor = Color.Azure
-        btnUploadImage.FlatAppearance.BorderColor = Color.LightSkyBlue
-        btnUploadImage.FlatAppearance.BorderSize = 2
-        btnUploadImage.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue
-        btnUploadImage.FlatStyle = FlatStyle.Flat
-        btnUploadImage.Font = New Font("Microsoft Sans Serif", 9F)
-        btnUploadImage.Location = New Point(935, 286)
-        btnUploadImage.Margin = New Padding(5, 6, 5, 6)
-        btnUploadImage.Name = "btnUploadImage"
-        btnUploadImage.Size = New Size(232, 56)
-        btnUploadImage.TabIndex = 18
-        btnUploadImage.Text = "Unggah Gambar"
-        btnUploadImage.UseVisualStyleBackColor = False
-        ' 
-        ' Panel4
-        ' 
-        Panel4.BorderStyle = BorderStyle.Fixed3D
-        Panel4.Controls.Add(PictureBox1)
-        Panel4.Location = New Point(793, 354)
-        Panel4.Margin = New Padding(5, 6, 5, 6)
-        Panel4.Name = "Panel4"
-        Panel4.Size = New Size(700, 656)
-        Panel4.TabIndex = 19
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Location = New Point(140, 169)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(416, 416)
-        PictureBox1.TabIndex = 0
-        PictureBox1.TabStop = False
         ' 
         ' Panel5
         ' 
@@ -338,9 +286,6 @@ Partial Class AddEditSpecimentForm
         ClientSize = New Size(1543, 1186)
         Controls.Add(btnHapus)
         Controls.Add(Panel5)
-        Controls.Add(Panel4)
-        Controls.Add(btnUploadImage)
-        Controls.Add(Label4)
         Controls.Add(btnBatal)
         Controls.Add(btnSimpan)
         Controls.Add(Panel3)
@@ -359,12 +304,9 @@ Partial Class AddEditSpecimentForm
         Panel2.PerformLayout()
         Panel3.ResumeLayout(False)
         Panel3.PerformLayout()
-        Panel4.ResumeLayout(False)
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel5.ResumeLayout(False)
         Panel5.PerformLayout()
         ResumeLayout(False)
-        PerformLayout()
 
     End Sub
 
@@ -383,10 +325,6 @@ Partial Class AddEditSpecimentForm
     Friend WithEvents cbMetodePengawetan As ComboBox
     Friend WithEvents txtFamili As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents btnUploadImage As Button
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel5 As Panel
     Friend WithEvents cbRuangPenyimpanan As ComboBox
     Friend WithEvents Label8 As Label

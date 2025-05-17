@@ -72,20 +72,4 @@
             Me.Close()
         End If
     End Sub
-
-    Private Sub btnUploadImage_Click(sender As Object, e As EventArgs) Handles btnUploadImage.Click
-
-        Dim ofd As New OpenFileDialog()
-
-        ' Filter agar hanya file gambar yang bisa dipilih
-        ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif"
-
-        If ofd.ShowDialog() = DialogResult.OK Then
-            ' Load gambar ke PictureBox dari file yang dipilih
-            PictureBox1.Image = Image.FromFile(ofd.FileName)
-
-            ' Optional: atur mode tampil gambar supaya proporsional
-            PictureBox1.SizeMode = PictureBoxSizeMode.CenterImage
-        End If
-    End Sub
 End Class
