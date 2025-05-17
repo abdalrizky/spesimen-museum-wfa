@@ -42,6 +42,11 @@
         Dim description = txtDeskripsi.Text
         Dim collectionStorageName = cbRuangPenyimpanan.Text
 
+        If commonName = "" Or scientificName = "" Or family = "" Or preservationMethod = "" Or description = "" Or collectionStorageName = "" Then
+            MessageBox.Show("Harus diisi semua", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
         Dim specimentObj As New Speciment()
         specimentObj.CommonName = commonName
         specimentObj.ScientificName = scientificName

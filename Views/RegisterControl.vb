@@ -16,6 +16,11 @@
         Dim password = txtPwBaru.Text
         Dim passwordConfirm = txtKonfirmPw.Text
 
+        If username = "" Or password = "" Or passwordConfirm = "" Then
+            MessageBox.Show("Harus diisi semua", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
         If passwordConfirm <> password Then
             MessageBox.Show("Konfirmasi password tidak sama.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return

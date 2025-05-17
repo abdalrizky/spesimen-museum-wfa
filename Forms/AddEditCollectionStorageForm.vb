@@ -15,6 +15,11 @@
         Dim storageName = txtStorageName.Text
         Dim storageLocation = txtStorageLocation.Text
 
+        If storageName = "" Or storageLocation = "" Then
+            MessageBox.Show("Harus diisi semua", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
         Dim collectionStorageObj As New CollectionStorage()
         collectionStorageObj.Name = storageName
         collectionStorageObj.Location = storageLocation
