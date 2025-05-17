@@ -23,6 +23,7 @@
                 WelcomeForm.Hide()
 
                 Dim mainMenuForm As New MainMenuForm()
+                mainMenuForm.User.Id = loginResult.Id
                 mainMenuForm.User.Username = loginResult.Username
                 mainMenuForm.User.Role = loginResult.Role
                 mainMenuForm.Show()
@@ -32,10 +33,6 @@
         Else
             MessageBox.Show("Username dan password tidak boleh kosong.", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
 
     End Sub
 End Class

@@ -1,7 +1,7 @@
-﻿Public Class AccountManagementForm
-    Private Sub ListView1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lvwUsers.SelectedIndexChanged
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
-    End Sub
+Public Class AccountManagementForm
+    Private originalItems As New List(Of ListViewItem)
 
     Private Sub AccountManagementForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadData()
@@ -10,6 +10,7 @@
     Private Sub LoadData()
         lvwUsers.Items.Clear()
         lvwUsers.Columns.Clear()
+        originalItems.Clear()
         lvwUsers.Columns.Add("No.")
         lvwUsers.Columns.Add("Role", 200)
         lvwUsers.Columns.Add("Username", 200)
@@ -22,13 +23,18 @@
             item.SubItems.Add(user.Role)
             item.SubItems.Add(user.Username)
             lvwUsers.Items.Add(item)
+            originalItems.Add(CType(item.Clone(), ListViewItem))
             ordinal += 1
         Next
     End Sub
 
-    Private Sub btnCreateBiologistAccount_Click(sender As Object, e As EventArgs) Handles btnCreateBiologistAccount.Click
-        Dim createBiologistAccountForm As New CreateBiologistAccountForm()
-        createBiologistAccountForm.ShowDialog()
-        LoadData()
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        Dim keyword As String = txtSearch.Text.ToLower()
+        lvwUsers.Items.Clear()
+        For Each item As ListViewItem In originalItems
+            If item.SubItems(2).Text.ToLower().Contains(keyword) Then
+                lvwUsers.Items.Add(CType(item.Clone(), ListViewItem))
+            End If
+        Next
     End Sub
 End Class

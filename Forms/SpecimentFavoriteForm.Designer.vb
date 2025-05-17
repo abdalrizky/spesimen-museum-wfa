@@ -22,44 +22,29 @@ Partial Class SpecimentFavoriteForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        FlowLayoutPanel1 = New FlowLayoutPanel()
-        ItemSpecimentControl1 = New ItemSpecimentControl()
-        FlowLayoutPanel1.SuspendLayout()
+        lvwSpeciments = New ListView()
         SuspendLayout()
         ' 
-        ' FlowLayoutPanel1
+        ' lvwSpeciments
         ' 
-        FlowLayoutPanel1.Controls.Add(ItemSpecimentControl1)
-        FlowLayoutPanel1.Dock = DockStyle.Fill
-        FlowLayoutPanel1.Location = New Point(0, 0)
-        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(1799, 804)
-        FlowLayoutPanel1.TabIndex = 0
-        ' 
-        ' ItemSpecimentControl1
-        ' 
-        ItemSpecimentControl1.BackColor = Color.Azure
-        ItemSpecimentControl1.BorderStyle = BorderStyle.FixedSingle
-        ItemSpecimentControl1.Location = New Point(10, 10)
-        ItemSpecimentControl1.Margin = New Padding(10)
-        ItemSpecimentControl1.MaximumSize = New Size(420, 420)
-        ItemSpecimentControl1.MinimumSize = New Size(420, 420)
-        ItemSpecimentControl1.Name = "ItemSpecimentControl1"
-        ItemSpecimentControl1.Size = New Size(420, 420)
-        ItemSpecimentControl1.TabIndex = 0
+        lvwSpeciments.BackColor = Color.Azure
+        lvwSpeciments.Location = New Point(61, 148)
+        lvwSpeciments.Name = "lvwSpeciments"
+        lvwSpeciments.Size = New Size(1618, 596)
+        lvwSpeciments.TabIndex = 0
+        lvwSpeciments.UseCompatibleStateImageBehavior = False
         ' 
         ' SpecimentFavoriteForm
         ' 
         AutoScaleDimensions = New SizeF(13F, 32F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1799, 804)
-        Controls.Add(FlowLayoutPanel1)
+        BackColor = Color.LightCyan
+        ClientSize = New Size(1747, 804)
+        Controls.Add(lvwSpeciments)
         Name = "SpecimentFavoriteForm"
-        Text = "SpecimentFavoriteForm"
-        FlowLayoutPanel1.ResumeLayout(False)
+        Text = "Spesimen Favorit"
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents ItemSpecimentControl1 As ItemSpecimentControl
+    Friend WithEvents lvwSpeciments As ListView
 End Class

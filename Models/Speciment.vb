@@ -6,4 +6,5 @@
     Public Property PreservationMethod As String
     Public Property Description As String
     Public Property PhotoPath As String
+    Public Property CollectionStorageName As String
 End Class

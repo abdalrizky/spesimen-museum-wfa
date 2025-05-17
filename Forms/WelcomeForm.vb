@@ -28,7 +28,8 @@
     End Sub
 
     Private Sub btnViewSpeciments_Click(sender As Object, e As EventArgs) Handles btnViewSpeciments.Click
-        SpecimentListForm.Show()
+        Dim specimentListForm As New SpecimentListForm()
+        specimentListForm.Show()
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click

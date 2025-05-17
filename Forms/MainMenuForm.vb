@@ -8,14 +8,12 @@
                 Dim employeeMenuControl As New AdminMenuControl
                 employeeMenuControl.Dock = DockStyle.Fill
                 SplitContainer1.Panel2.Controls.Add(employeeMenuControl)
-            Case "biologist"
-                Dim biologistMenuControl As New BiologistMenuControl
-                biologistMenuControl.Dock = DockStyle.Fill
-                SplitContainer1.Panel2.Controls.Add(biologistMenuControl)
             Case "visitor"
                 Dim visitorMenuControl As New VisitorMenuControl
+                visitorMenuControl.User = Me.User
                 visitorMenuControl.Dock = DockStyle.Fill
                 SplitContainer1.Panel2.Controls.Add(visitorMenuControl)
+                txtWelcomeMessage.Text = $"Selamat Datang, {User.Username}"
             Case Else
                 MessageBox.Show("Login tidak valid.")
                 End

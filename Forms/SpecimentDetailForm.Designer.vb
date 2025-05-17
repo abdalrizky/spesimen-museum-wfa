@@ -22,7 +22,6 @@ Partial Class SpecimentDetailForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        PictureBox1 = New PictureBox()
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -35,22 +34,14 @@ Partial Class SpecimentDetailForm
         txtFamily = New TextBox()
         txtPreservationMethod = New TextBox()
         txtCollectionStorage = New TextBox()
-        btnSimpan = New Button()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        btnFavorite = New Button()
+        Label7 = New Label()
         SuspendLayout()
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Location = New Point(395, 76)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(200, 200)
-        PictureBox1.TabIndex = 0
-        PictureBox1.TabStop = False
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(63, 372)
+        Label1.Location = New Point(67, 188)
         Label1.Name = "Label1"
         Label1.Size = New Size(156, 32)
         Label1.TabIndex = 1
@@ -59,7 +50,7 @@ Partial Class SpecimentDetailForm
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(63, 446)
+        Label2.Location = New Point(67, 262)
         Label2.Name = "Label2"
         Label2.Size = New Size(149, 32)
         Label2.TabIndex = 2
@@ -68,7 +59,7 @@ Partial Class SpecimentDetailForm
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(63, 517)
+        Label3.Location = New Point(67, 333)
         Label3.Name = "Label3"
         Label3.Size = New Size(76, 32)
         Label3.TabIndex = 3
@@ -77,7 +68,7 @@ Partial Class SpecimentDetailForm
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(63, 592)
+        Label4.Location = New Point(67, 408)
         Label4.Name = "Label4"
         Label4.Size = New Size(234, 32)
         Label4.TabIndex = 4
@@ -86,7 +77,7 @@ Partial Class SpecimentDetailForm
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(63, 721)
+        Label5.Location = New Point(67, 537)
         Label5.Name = "Label5"
         Label5.Size = New Size(110, 32)
         Label5.TabIndex = 5
@@ -94,17 +85,21 @@ Partial Class SpecimentDetailForm
         ' 
         ' txtCommonName
         ' 
-        txtCommonName.Enabled = False
-        txtCommonName.Location = New Point(417, 372)
+        txtCommonName.BackColor = Color.Azure
+        txtCommonName.BorderStyle = BorderStyle.None
+        txtCommonName.Location = New Point(421, 188)
         txtCommonName.Name = "txtCommonName"
-        txtCommonName.Size = New Size(514, 39)
+        txtCommonName.ReadOnly = True
+        txtCommonName.Size = New Size(514, 32)
         txtCommonName.TabIndex = 6
         ' 
         ' txtDescription
         ' 
-        txtDescription.Enabled = False
-        txtDescription.Location = New Point(63, 756)
+        txtDescription.BackColor = Color.Azure
+        txtDescription.BorderStyle = BorderStyle.None
+        txtDescription.Location = New Point(67, 572)
         txtDescription.Name = "txtDescription"
+        txtDescription.ReadOnly = True
         txtDescription.Size = New Size(868, 192)
         txtDescription.TabIndex = 7
         txtDescription.Text = ""
@@ -112,7 +107,7 @@ Partial Class SpecimentDetailForm
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(64, 661)
+        Label6.Location = New Point(68, 477)
         Label6.Name = "Label6"
         Label6.Size = New Size(233, 32)
         Label6.TabIndex = 8
@@ -120,59 +115,79 @@ Partial Class SpecimentDetailForm
         ' 
         ' txtScientificName
         ' 
-        txtScientificName.Enabled = False
-        txtScientificName.Location = New Point(417, 443)
+        txtScientificName.BackColor = Color.Azure
+        txtScientificName.BorderStyle = BorderStyle.None
+        txtScientificName.Location = New Point(421, 259)
         txtScientificName.Name = "txtScientificName"
-        txtScientificName.Size = New Size(514, 39)
+        txtScientificName.ReadOnly = True
+        txtScientificName.Size = New Size(514, 32)
         txtScientificName.TabIndex = 9
         ' 
         ' txtFamily
         ' 
-        txtFamily.Enabled = False
-        txtFamily.Location = New Point(417, 517)
+        txtFamily.BackColor = Color.Azure
+        txtFamily.BorderStyle = BorderStyle.None
+        txtFamily.Location = New Point(421, 333)
         txtFamily.Name = "txtFamily"
-        txtFamily.Size = New Size(514, 39)
+        txtFamily.ReadOnly = True
+        txtFamily.Size = New Size(514, 32)
         txtFamily.TabIndex = 10
         ' 
         ' txtPreservationMethod
         ' 
-        txtPreservationMethod.Enabled = False
-        txtPreservationMethod.Location = New Point(417, 592)
+        txtPreservationMethod.BackColor = Color.Azure
+        txtPreservationMethod.BorderStyle = BorderStyle.None
+        txtPreservationMethod.Location = New Point(421, 408)
         txtPreservationMethod.Name = "txtPreservationMethod"
-        txtPreservationMethod.Size = New Size(514, 39)
+        txtPreservationMethod.ReadOnly = True
+        txtPreservationMethod.Size = New Size(514, 32)
         txtPreservationMethod.TabIndex = 11
         ' 
         ' txtCollectionStorage
         ' 
-        txtCollectionStorage.Enabled = False
-        txtCollectionStorage.Location = New Point(417, 661)
+        txtCollectionStorage.BackColor = Color.Azure
+        txtCollectionStorage.BorderStyle = BorderStyle.None
+        txtCollectionStorage.Location = New Point(421, 477)
         txtCollectionStorage.Name = "txtCollectionStorage"
-        txtCollectionStorage.Size = New Size(514, 39)
+        txtCollectionStorage.ReadOnly = True
+        txtCollectionStorage.Size = New Size(514, 32)
         txtCollectionStorage.TabIndex = 12
         ' 
-        ' btnSimpan
+        ' btnFavorite
         ' 
-        btnSimpan.BackColor = Color.Azure
-        btnSimpan.FlatAppearance.BorderColor = Color.LightSkyBlue
-        btnSimpan.FlatAppearance.BorderSize = 2
-        btnSimpan.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue
-        btnSimpan.FlatStyle = FlatStyle.Flat
-        btnSimpan.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        btnSimpan.Location = New Point(747, 36)
-        btnSimpan.Margin = New Padding(5, 6, 5, 6)
-        btnSimpan.Name = "btnSimpan"
-        btnSimpan.Size = New Size(224, 78)
-        btnSimpan.TabIndex = 16
-        btnSimpan.Text = "Difavoritkan"
-        btnSimpan.UseVisualStyleBackColor = False
+        btnFavorite.BackColor = Color.Azure
+        btnFavorite.FlatAppearance.BorderColor = Color.LightSkyBlue
+        btnFavorite.FlatAppearance.BorderSize = 2
+        btnFavorite.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue
+        btnFavorite.FlatStyle = FlatStyle.Flat
+        btnFavorite.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnFavorite.Location = New Point(601, 53)
+        btnFavorite.Margin = New Padding(5, 6, 5, 6)
+        btnFavorite.Name = "btnFavorite"
+        btnFavorite.Size = New Size(334, 78)
+        btnFavorite.TabIndex = 16
+        btnFavorite.Text = "Hapus dari Favorit"
+        btnFavorite.UseVisualStyleBackColor = False
+        btnFavorite.Visible = False
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Font = New Font("Segoe UI", 14F)
+        Label7.Location = New Point(67, 63)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(291, 51)
+        Label7.TabIndex = 17
+        Label7.Text = "Detail Spesimen"
         ' 
         ' SpecimentDetailForm
         ' 
         AutoScaleDimensions = New SizeF(13F, 32F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.LightCyan
-        ClientSize = New Size(1020, 1006)
-        Controls.Add(btnSimpan)
+        ClientSize = New Size(1012, 822)
+        Controls.Add(Label7)
+        Controls.Add(btnFavorite)
         Controls.Add(txtCollectionStorage)
         Controls.Add(txtPreservationMethod)
         Controls.Add(txtFamily)
@@ -185,17 +200,13 @@ Partial Class SpecimentDetailForm
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Controls.Add(PictureBox1)
         FormBorderStyle = FormBorderStyle.FixedSingle
         MaximizeBox = False
         Name = "SpecimentDetailForm"
         Text = "Detail Spesimen"
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -208,5 +219,6 @@ Partial Class SpecimentDetailForm
     Friend WithEvents txtFamily As TextBox
     Friend WithEvents txtPreservationMethod As TextBox
     Friend WithEvents txtCollectionStorage As TextBox
-    Friend WithEvents btnSimpan As Button
+    Friend WithEvents btnFavorite As Button
+    Friend WithEvents Label7 As Label
 End Class

@@ -23,8 +23,7 @@ Partial Class AccountManagementForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         lvwUsers = New ListView()
-        btnCreateBiologistAccount = New Button()
-        TextBox1 = New TextBox()
+        txtSearch = New TextBox()
         SuspendLayout()
         ' 
         ' lvwUsers
@@ -32,36 +31,20 @@ Partial Class AccountManagementForm
         lvwUsers.BackColor = Color.Azure
         lvwUsers.Dock = DockStyle.Bottom
         lvwUsers.FullRowSelect = True
-        lvwUsers.Location = New Point(0, 184)
+        lvwUsers.Location = New Point(0, 120)
         lvwUsers.Name = "lvwUsers"
-        lvwUsers.Size = New Size(888, 412)
+        lvwUsers.Size = New Size(888, 476)
         lvwUsers.TabIndex = 0
         lvwUsers.UseCompatibleStateImageBehavior = False
         lvwUsers.View = View.Details
         ' 
-        ' btnCreateBiologistAccount
+        ' txtSearch
         ' 
-        btnCreateBiologistAccount.BackColor = Color.Azure
-        btnCreateBiologistAccount.FlatAppearance.BorderColor = Color.LightSkyBlue
-        btnCreateBiologistAccount.FlatAppearance.BorderSize = 2
-        btnCreateBiologistAccount.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue
-        btnCreateBiologistAccount.FlatStyle = FlatStyle.Flat
-        btnCreateBiologistAccount.Font = New Font("Microsoft Sans Serif", 9F)
-        btnCreateBiologistAccount.Location = New Point(25, 33)
-        btnCreateBiologistAccount.Margin = New Padding(5, 6, 5, 6)
-        btnCreateBiologistAccount.Name = "btnCreateBiologistAccount"
-        btnCreateBiologistAccount.Size = New Size(833, 56)
-        btnCreateBiologistAccount.TabIndex = 10
-        btnCreateBiologistAccount.Text = "Buat Akun Ahli Biologi"
-        btnCreateBiologistAccount.UseVisualStyleBackColor = False
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(25, 128)
-        TextBox1.Name = "TextBox1"
-        TextBox1.PlaceholderText = "Cari Username...."
-        TextBox1.Size = New Size(833, 39)
-        TextBox1.TabIndex = 11
+        txtSearch.Location = New Point(25, 36)
+        txtSearch.Name = "txtSearch"
+        txtSearch.PlaceholderText = "Cari Username...."
+        txtSearch.Size = New Size(833, 39)
+        txtSearch.TabIndex = 11
         ' 
         ' AccountManagementForm
         ' 
@@ -69,8 +52,7 @@ Partial Class AccountManagementForm
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.LightCyan
         ClientSize = New Size(888, 596)
-        Controls.Add(TextBox1)
-        Controls.Add(btnCreateBiologistAccount)
+        Controls.Add(txtSearch)
         Controls.Add(lvwUsers)
         Name = "AccountManagementForm"
         Text = "Manajemen Akun"
@@ -79,6 +61,5 @@ Partial Class AccountManagementForm
     End Sub
 
     Friend WithEvents lvwUsers As ListView
-    Friend WithEvents btnCreateBiologistAccount As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtSearch As TextBox
 End Class

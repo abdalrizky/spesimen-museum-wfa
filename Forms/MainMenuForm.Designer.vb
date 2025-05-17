@@ -23,7 +23,7 @@ Partial Class MainMenuForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         SplitContainer1 = New SplitContainer()
-        Label1 = New Label()
+        txtWelcomeMessage = New Label()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.SuspendLayout()
@@ -38,21 +38,21 @@ Partial Class MainMenuForm
         ' 
         ' SplitContainer1.Panel1
         ' 
-        SplitContainer1.Panel1.Controls.Add(Label1)
+        SplitContainer1.Panel1.Controls.Add(txtWelcomeMessage)
         SplitContainer1.Size = New Size(698, 854)
         SplitContainer1.SplitterDistance = 290
         SplitContainer1.TabIndex = 0
         ' 
-        ' Label1
+        ' txtWelcomeMessage
         ' 
-        Label1.Dock = DockStyle.Fill
-        Label1.Font = New Font("Segoe UI", 12F)
-        Label1.Location = New Point(0, 0)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(698, 290)
-        Label1.TabIndex = 0
-        Label1.Text = "Selamat datang, Admin"
-        Label1.TextAlign = ContentAlignment.MiddleCenter
+        txtWelcomeMessage.Dock = DockStyle.Fill
+        txtWelcomeMessage.Font = New Font("Segoe UI", 12F)
+        txtWelcomeMessage.Location = New Point(0, 0)
+        txtWelcomeMessage.Name = "txtWelcomeMessage"
+        txtWelcomeMessage.Size = New Size(698, 290)
+        txtWelcomeMessage.TabIndex = 0
+        txtWelcomeMessage.Text = "Selamat datang, Admin"
+        txtWelcomeMessage.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' MainMenuForm
         ' 
@@ -73,5 +73,5 @@ Partial Class MainMenuForm
     End Sub
 
     Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents Label1 As Label
+    Friend WithEvents txtWelcomeMessage As Label
 End Class

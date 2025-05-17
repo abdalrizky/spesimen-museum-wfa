@@ -31,20 +31,21 @@ Partial Class AddEditSpecimentForm
         Panel2 = New Panel()
         txtFamili = New TextBox()
         Label1 = New Label()
-        ComboBox1 = New ComboBox()
+        cbMetodePengawetan = New ComboBox()
         Label6 = New Label()
         Panel3 = New Panel()
         txtDeskripsi = New TextBox()
         btnSimpan = New Button()
         btnBatal = New Button()
         Label4 = New Label()
-        btnSave = New Button()
+        btnUploadImage = New Button()
         Panel4 = New Panel()
         PictureBox1 = New PictureBox()
         Panel5 = New Panel()
-        cbCollectionStorages = New ComboBox()
+        cbRuangPenyimpanan = New ComboBox()
         Label8 = New Label()
         OpenFileDialog1 = New OpenFileDialog()
+        btnHapus = New Button()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         Panel3.SuspendLayout()
@@ -127,7 +128,7 @@ Partial Class AddEditSpecimentForm
         Panel2.BorderStyle = BorderStyle.Fixed3D
         Panel2.Controls.Add(txtFamili)
         Panel2.Controls.Add(Label1)
-        Panel2.Controls.Add(ComboBox1)
+        Panel2.Controls.Add(cbMetodePengawetan)
         Panel2.Controls.Add(Label6)
         Panel2.Location = New Point(37, 276)
         Panel2.Margin = New Padding(5, 6, 5, 6)
@@ -157,13 +158,14 @@ Partial Class AddEditSpecimentForm
         Label1.TabIndex = 9
         Label1.Text = "Famili"
         ' 
-        ' ComboBox1
+        ' cbMetodePengawetan
         ' 
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(338, 117)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(320, 40)
-        ComboBox1.TabIndex = 8
+        cbMetodePengawetan.FormattingEnabled = True
+        cbMetodePengawetan.Items.AddRange(New Object() {"Basah", "Kering", "Beku"})
+        cbMetodePengawetan.Location = New Point(338, 117)
+        cbMetodePengawetan.Name = "cbMetodePengawetan"
+        cbMetodePengawetan.Size = New Size(320, 40)
+        cbMetodePengawetan.TabIndex = 8
         ' 
         ' Label6
         ' 
@@ -243,21 +245,21 @@ Partial Class AddEditSpecimentForm
         Label4.TabIndex = 17
         Label4.Text = "Gambar"
         ' 
-        ' btnSave
+        ' btnUploadImage
         ' 
-        btnSave.BackColor = Color.Azure
-        btnSave.FlatAppearance.BorderColor = Color.LightSkyBlue
-        btnSave.FlatAppearance.BorderSize = 2
-        btnSave.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue
-        btnSave.FlatStyle = FlatStyle.Flat
-        btnSave.Font = New Font("Microsoft Sans Serif", 9F)
-        btnSave.Location = New Point(935, 286)
-        btnSave.Margin = New Padding(5, 6, 5, 6)
-        btnSave.Name = "btnSave"
-        btnSave.Size = New Size(232, 56)
-        btnSave.TabIndex = 18
-        btnSave.Text = "Unggah Gambar"
-        btnSave.UseVisualStyleBackColor = False
+        btnUploadImage.BackColor = Color.Azure
+        btnUploadImage.FlatAppearance.BorderColor = Color.LightSkyBlue
+        btnUploadImage.FlatAppearance.BorderSize = 2
+        btnUploadImage.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue
+        btnUploadImage.FlatStyle = FlatStyle.Flat
+        btnUploadImage.Font = New Font("Microsoft Sans Serif", 9F)
+        btnUploadImage.Location = New Point(935, 286)
+        btnUploadImage.Margin = New Padding(5, 6, 5, 6)
+        btnUploadImage.Name = "btnUploadImage"
+        btnUploadImage.Size = New Size(232, 56)
+        btnUploadImage.TabIndex = 18
+        btnUploadImage.Text = "Unggah Gambar"
+        btnUploadImage.UseVisualStyleBackColor = False
         ' 
         ' Panel4
         ' 
@@ -280,20 +282,20 @@ Partial Class AddEditSpecimentForm
         ' Panel5
         ' 
         Panel5.BorderStyle = BorderStyle.Fixed3D
-        Panel5.Controls.Add(cbCollectionStorages)
+        Panel5.Controls.Add(cbRuangPenyimpanan)
         Panel5.Controls.Add(Label8)
         Panel5.Location = New Point(793, 24)
         Panel5.Name = "Panel5"
         Panel5.Size = New Size(700, 214)
         Panel5.TabIndex = 20
         ' 
-        ' cbCollectionStorages
+        ' cbRuangPenyimpanan
         ' 
-        cbCollectionStorages.FormattingEnabled = True
-        cbCollectionStorages.Location = New Point(338, 87)
-        cbCollectionStorages.Name = "cbCollectionStorages"
-        cbCollectionStorages.Size = New Size(326, 40)
-        cbCollectionStorages.TabIndex = 1
+        cbRuangPenyimpanan.FormattingEnabled = True
+        cbRuangPenyimpanan.Location = New Point(338, 87)
+        cbRuangPenyimpanan.Name = "cbRuangPenyimpanan"
+        cbRuangPenyimpanan.Size = New Size(326, 40)
+        cbRuangPenyimpanan.TabIndex = 1
         ' 
         ' Label8
         ' 
@@ -309,6 +311,23 @@ Partial Class AddEditSpecimentForm
         ' 
         OpenFileDialog1.FileName = "OpenFileDialog1"
         ' 
+        ' btnHapus
+        ' 
+        btnHapus.BackColor = Color.Azure
+        btnHapus.FlatAppearance.BorderColor = Color.LightSkyBlue
+        btnHapus.FlatAppearance.BorderSize = 2
+        btnHapus.FlatAppearance.MouseOverBackColor = Color.CornflowerBlue
+        btnHapus.FlatStyle = FlatStyle.Flat
+        btnHapus.Font = New Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        btnHapus.Location = New Point(37, 1062)
+        btnHapus.Margin = New Padding(5, 6, 5, 6)
+        btnHapus.Name = "btnHapus"
+        btnHapus.Size = New Size(182, 78)
+        btnHapus.TabIndex = 21
+        btnHapus.Text = "Hapus"
+        btnHapus.UseVisualStyleBackColor = False
+        btnHapus.Visible = False
+        ' 
         ' AddEditSpecimentForm
         ' 
         AcceptButton = btnSimpan
@@ -317,9 +336,10 @@ Partial Class AddEditSpecimentForm
         BackColor = Color.LightCyan
         CancelButton = btnBatal
         ClientSize = New Size(1543, 1186)
+        Controls.Add(btnHapus)
         Controls.Add(Panel5)
         Controls.Add(Panel4)
-        Controls.Add(btnSave)
+        Controls.Add(btnUploadImage)
         Controls.Add(Label4)
         Controls.Add(btnBatal)
         Controls.Add(btnSimpan)
@@ -360,15 +380,16 @@ Partial Class AddEditSpecimentForm
     Friend WithEvents txtDeskripsi As TextBox
     Friend WithEvents btnSimpan As Button
     Friend WithEvents btnBatal As Button
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbMetodePengawetan As ComboBox
     Friend WithEvents txtFamili As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents btnSave As Button
+    Friend WithEvents btnUploadImage As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents cbCollectionStorages As ComboBox
+    Friend WithEvents cbRuangPenyimpanan As ComboBox
     Friend WithEvents Label8 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents btnHapus As Button
 End Class
